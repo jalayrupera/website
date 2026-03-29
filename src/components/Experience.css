@@ -139,6 +139,12 @@
   font-family: var(--font-mono);
 }
 
+.timeline-highlights .highlight {
+  color: var(--accent);
+  font-weight: 600;
+  text-shadow: 0 0 10px var(--accent-dim);
+}
+
 @media (max-width: 640px) {
   .timeline {
     padding-left: 1.5rem;

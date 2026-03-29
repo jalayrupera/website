@@ -94,6 +94,12 @@
   font-size: 0.75rem;
 }
 
+.project-highlights .highlight {
+  color: var(--accent);
+  font-weight: 600;
+  text-shadow: 0 0 10px var(--accent-dim);
+}
+
 .project-keywords {
   display: flex;
   flex-wrap: wrap;

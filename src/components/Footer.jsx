@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="footer-output">
             <span className="bracket">{'{'}</span>
             <div className="footer-line">
-              <span className="key">"status"</span>: <span className="string">"Available for opportunities"</span>,
+              <span className="key">"status"</span>: <span className="string">"Open to opportunities"</span>,
             </div>
             <div className="footer-line">
               <span className="key">"location"</span>: <span className="string">"Bangalore, India"</span>,
