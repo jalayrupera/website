@@ -1,133 +1,99 @@
-import { motion } from 'framer-motion';
-import './Experience.css';
-
-const experiences = [
+const jobs = [
   {
-    name: "Mantys",
-    position: "SDE - Core",
-    location: "Bangalore, Karnataka",
-    startDate: "Apr 2025",
-    endDate: "Present",
-    summary: "Healthcare technology company building tools for insurance eligibility verification.",
+    num: '01',
+    name: 'Mantys',
+    yc: true,
+    current: true,
+    position: 'Full Stack Engineer',
+    location: 'Bangalore, Karnataka',
+    dates: 'Apr 2025 — Present',
+    summary: 'Healthcare technology company building tools for insurance eligibility verification.',
     highlights: [
-      <>Engineered automated web scraping pipelines using <span className="highlight">Playwright</span> and <span className="highlight">Python</span>, reducing manual patient data retrieval time by 80%.</>,
-      <>Developed <span className="highlight">LLM</span>-based data transformation workflows converting unstructured HTML into structured JSON with 95%+ accuracy.</>,
-      <>Enhanced the core <span className="highlight">Chrome extension</span>, adding features and fixing bugs that reduced user-reported issues by 90%.</>,
-      <>Collaborated with cross-functional teams to improve backend reliability, observability, and system performance.</>
+      'Engineered automated web scraping pipelines and the REST APIs powering them, using Playwright and Python, reducing manual patient data retrieval time by 80%.',
+      'Developed LLM-based data transformation workflows converting unstructured page data into structured JSON with 95%+ accuracy — masking PII with synthetic data, so no personal information ever reached the AI.',
+      'Enhanced the core Chrome extension, adding features and fixing bugs that reduced user-reported issues by 90%.',
+      'Built an end-of-day reporting system emailing insurance eligibility summaries to hospitals and clinics — driving rejection rates down to 0.5–1% and cutting workload for front-office and RCM teams.',
+      'Partnered with business, marketing, and ops teams on client implementations — owning outcomes beyond engineering, from onboarding to retention.',
     ],
-    isCurrent: true,
-    yc: true
   },
   {
-    name: "Vigilare Technologies",
-    position: "Founder & CEO — Backend Engineer",
-    location: "Bhavnagar, Gujarat",
-    startDate: "Jan 2024",
-    endDate: "Feb 2025",
-    summary: "Defense-tech startup building GPS-denied autonomous drone systems for mapping and inspection.",
+    num: '02',
+    name: 'Vigilare Technologies',
+    yc: false,
+    current: false,
+    position: 'Founder & CEO — Backend Engineer',
+    location: 'Bhavnagar, Gujarat',
+    dates: 'Jan 2024 — Feb 2025',
+    summary: 'Defense-tech startup building GPS-denied autonomous drone systems for mapping and inspection.',
     highlights: [
-      <>Founded a defense-tech startup building a GPS-denied autonomous drone system for mapping and inspection.</>,
-      <>Developed backend services and REST APIs using <span className="highlight">Python</span> and <span className="highlight">FastAPI</span> for real-time data streaming and mission control.</>,
-      <>Created <span className="highlight">ROS2</span> packages for sensor fusion, <span className="highlight">VIO</span>, and telemetry communication via <span className="highlight">MQTT</span>.</>,
-      <>Containerized and deployed backend systems with <span className="highlight">Docker</span> and <span className="highlight">K3s</span>, enabling modular and scalable deployment.</>
+      'Founded a defense-tech startup building a GPS-denied autonomous drone system for mapping and inspection.',
+      'Developed backend services and REST APIs using Python and FastAPI for real-time data streaming and mission control.',
+      'Created ROS2 packages for sensor fusion, VIO, and telemetry communication via MQTT.',
+      'Containerized and deployed backend systems with Docker and K3s, enabling modular and scalable deployment.',
     ],
-    isCurrent: false
   },
   {
-    name: "Zu Technologies",
-    position: "Backend Developer — B2B SaaS",
-    location: "Bangalore, Karnataka",
-    startDate: "May 2022",
-    endDate: "Sep 2023",
-    summary: "B2B SaaS company building engagement and gamification platforms.",
+    num: '03',
+    name: 'Zu Technologies',
+    yc: false,
+    current: false,
+    position: 'Backend Developer — B2B SaaS',
+    location: 'Bangalore, Karnataka',
+    dates: 'May 2022 — Sep 2023',
+    summary: 'B2B SaaS company building engagement and gamification platforms.',
     highlights: [
-      <>Developed production-grade REST APIs and microservices using <span className="highlight">Python</span> (<span className="highlight">FastAPI</span>), <span className="highlight">MongoDB</span>, and <span className="highlight">PostgreSQL</span>.</>,
-      <>Integrated <span className="highlight">Celery</span>, <span className="highlight">Redis</span>, and <span className="highlight">RabbitMQ</span> for asynchronous job scheduling and background task execution.</>,
-      <>Led backend for 'Stock Wars' — a virtual stock trading game, handling <span className="highlight">10K+ concurrent users</span> with efficient caching and messaging.</>,
-      <>Deployed services using <span className="highlight">Docker</span> and <span className="highlight">Kubernetes</span>, improving reliability and deployment speed by 40%.</>
+      'Developed production-grade REST APIs and microservices using Python (FastAPI), MongoDB, and PostgreSQL.',
+      'Integrated Celery, Redis, and RabbitMQ for asynchronous job scheduling and background task execution.',
+      "Led backend for 'Stock Wars' — a virtual stock trading game, handling 10K+ concurrent users with efficient caching and messaging.",
+      'Deployed services using Docker and Kubernetes, improving reliability and deployment speed by 40%.',
     ],
-    isCurrent: false
   },
   {
-    name: "Mindtree Limited",
-    position: "Software Developer",
-    location: "Bangalore, Karnataka",
-    startDate: "Jul 2021",
-    endDate: "Feb 2022",
-    summary: "Global technology consulting and services company.",
+    num: '04',
+    name: 'Mindtree Limited',
+    yc: false,
+    current: false,
+    position: 'Software Developer',
+    location: 'Bangalore, Karnataka',
+    dates: 'Jul 2021 — Feb 2022',
+    summary: 'Global technology consulting and services company.',
     highlights: [
-      <>Developed backend APIs and database schemas using <span className="highlight">Python</span> and <span className="highlight">PostgreSQL</span> for internal enterprise applications.</>,
-      <>Focused on performance optimization and backend automation in client projects.</>
+      'Developed backend APIs and database schemas using Python and PostgreSQL for internal enterprise applications.',
+      'Focused on performance optimization and backend automation in client projects.',
     ],
-    isCurrent: false
-  }
+  },
 ];
 
-const Experience = () => {
+export default function Experience() {
   return (
-    <section className="section experience" id="experience">
+    <section id="experience" className="section experience-section">
       <div className="container">
-        <motion.p 
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          /experience
-        </motion.p>
-        <motion.h2 
-          className="section-heading"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          Work History
-        </motion.h2>
+        <h2 className="section-label">Experience</h2>
 
-        <div className="timeline">
-          {experiences.map((exp, index) => (
-            <motion.div 
-              key={exp.name}
-              className="timeline-item"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="timeline-marker">
-                <div className={`marker-dot ${exp.isCurrent ? 'current' : ''}`}></div>
-                {index < experiences.length - 1 && <div className="marker-line"></div>}
+        {jobs.map((job) => (
+          <div key={job.num} className="experience-row">
+            <div className="experience-index">{job.num}</div>
+            <div>
+              <div className="experience-dates">{job.dates}</div>
+              <div className="experience-location">{job.location}</div>
+            </div>
+            <div>
+              <div className="experience-header">
+                <h3 className="experience-company">{job.name}</h3>
+                {job.yc && <span className="chip-yc">YC W23</span>}
+                {job.current && <span className="chip-current">Current</span>}
               </div>
-              
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <div>
-                    <h3 className="timeline-company">
-                      {exp.name}
-                      {exp.yc && <span className="yc-tag">YC W23</span>}
-                    </h3>
-                    <p className="timeline-position">{exp.position}</p>
-                  </div>
-                  <div className="timeline-date">
-                    {exp.startDate} — {exp.endDate || 'Present'}
-                  </div>
-                </div>
-                <p className="timeline-location">{exp.location}</p>
-                <p className="timeline-summary">{exp.summary}</p>
-                <ul className="timeline-highlights">
-                  {exp.highlights.map((highlight, i) => (
-                    <li key={i}>{highlight}</li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              <div className="experience-position">{job.position}</div>
+              <div className="experience-summary">{job.summary}</div>
+              <ul className="experience-highlights">
+                {job.highlights.map((highlight, index) => (
+                  <li key={index}>{highlight}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
-
-export default Experience;
+}
