@@ -26,7 +26,7 @@ export default function Hero() {
 
         <div className="hero-actions">
           <a
-            href="JRupera Resume-26.pdf"
+            href="Jalay Rupera - Resume.pdf"
             download
             className="btn btn-primary"
           >
